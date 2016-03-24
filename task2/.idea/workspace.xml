@@ -25,12 +25,21 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-22.958334">
               <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
 =======
             <state vertical-scroll-proportion="-23.583334">
               <caret line="174" column="59" selection-start-line="174" selection-start-column="59" selection-end-line="174" selection-end-column="59" />
 >>>>>>> gh-pages
+=======
+            <state vertical-scroll-proportion="-23.583334">
+              <caret line="174" column="59" selection-start-line="174" selection-start-column="59" selection-end-line="174" selection-end-column="59" />
+=======
+            <state vertical-scroll-proportion="-22.958334">
+              <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
               <folding />
             </state>
           </provider>
@@ -40,12 +49,21 @@
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.6199702">
               <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="143" selection-end-column="1" />
 =======
             <state vertical-scroll-proportion="0.9552906">
               <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
 >>>>>>> gh-pages
+=======
+            <state vertical-scroll-proportion="0.9552906">
+              <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+=======
+            <state vertical-scroll-proportion="0.6199702">
+              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="143" selection-end-column="1" />
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
               <folding />
             </state>
           </provider>
@@ -107,10 +125,17 @@
     </navigator>
     <panes>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <pane id="Scope" />
       <pane id="Scratches" />
 >>>>>>> gh-pages
+=======
+      <pane id="Scope" />
+      <pane id="Scratches" />
+=======
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -146,10 +171,17 @@
         </subPane>
       </pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="Scope" />
 =======
 >>>>>>> gh-pages
+=======
+=======
+      <pane id="Scratches" />
+      <pane id="Scope" />
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,6 +309,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
           <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
           <folding />
         </state>
@@ -309,8 +345,12 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
 =======
 >>>>>>> gh-pages
+=======
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
           <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
           <folding />
         </state>
@@ -348,12 +388,21 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-22.958334">
           <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
 =======
         <state vertical-scroll-proportion="-23.583334">
           <caret line="174" column="59" selection-start-line="174" selection-start-column="59" selection-end-line="174" selection-end-column="59" />
 >>>>>>> gh-pages
+=======
+        <state vertical-scroll-proportion="-23.583334">
+          <caret line="174" column="59" selection-start-line="174" selection-start-column="59" selection-end-line="174" selection-end-column="59" />
+=======
+        <state vertical-scroll-proportion="-22.958334">
+          <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
           <folding />
         </state>
       </provider>
@@ -361,12 +410,21 @@
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.6199702">
           <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="143" selection-end-column="1" />
 =======
         <state vertical-scroll-proportion="0.9552906">
           <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
 >>>>>>> gh-pages
+=======
+        <state vertical-scroll-proportion="0.9552906">
+          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+=======
+        <state vertical-scroll-proportion="0.6199702">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="143" selection-end-column="1" />
+>>>>>>> master
+>>>>>>> f6b5d5c09d55cd5534584ad47d0e92c91c4a0ff2
           <folding />
         </state>
       </provider>
