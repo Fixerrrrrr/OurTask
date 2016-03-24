@@ -129,6 +129,7 @@ aside textarea{
     background-color: deepskyblue;
     color: white;
     border-radius: 15px;
+<<<<<<< HEAD
 }
 footer{
     width: 100%;
@@ -141,4 +142,6 @@ footer{
 footer p{
     position:relative;
     top: 30%;
+=======
+>>>>>>> gh-pages
 }
