@@ -41,6 +41,8 @@ header{
 .nav a{
     text-decoration: none;
     padding-bottom: 10px;
+}
+.nav a:link,a:visited{
     color: darkgrey;
 }
 .nav a:hover,a:active{
