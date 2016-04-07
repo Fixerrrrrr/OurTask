@@ -35,7 +35,7 @@
             return data[1]>60;
         }
 
-        var newArray=aqiData.filter(check).sort(function(a,b){return a-b;}).reverse();
+        var newArray=aqiData.filter(check).sort(function(a,b){return b[1]-a[1];});
 
         for(var i=0;i<newArray.length;i++){
                 document.getElementById("aqi-list").innerHTML+="<li>第"+(i+1)+"名: "+newArray[i][0]+","+newArray[i][1]+"</li>";
