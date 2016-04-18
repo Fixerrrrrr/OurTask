@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 18</title>
+    <style>
+        input{
+            display: inline-block;
+        }
+        #output div{
+            background: red;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="input">
+        <input type="text" id="input_value">
+        <input type="button" value="左侧入" id="left_in" onclick="fun1()">
+        <input type="button" value="右侧入" id="right_in" onclick="fun2()">
+        <input type="button" value="左侧出" id="left_out" onclick="fun3()">
+        <input type="button" value="右侧出" id="right_out" onclick="fun4()">
+    </div>
+    <div id="output">
+
+    </div>
+
+<script>
+    var input=document.getElementById('input_value');
+    var output=document.getElementById('output');
+
+    function creat(){                               //创建新节点
+        var node=document.createElement('div');
+        if(!input.value.match(/\d/)){
+            alert('请输入数字');
+            return false;
+        }
+        var textnode=document.createTextNode(input.value);
+        node.appendChild(textnode);
+        return node;
+    }
+    function del(){                                 //点击删除事件
+        output.removeChild(event.target);
+    }
+
+    //fun1--4对应输入框后的4个button
+    function fun1(){
+        var node=creat();
+        node.onclick=del;
+        output.insertBefore(node,output.firstChild);
+
+    }
+    function fun2(){
+        var node=creat();
+        node.onclick=del;
+        output.appendChild(node);
+    }
+    function fun3(){
+        if(!output.childElementCount){
+            alert("队列为空");
+            return false;
+        }
+        alert(output.firstChild.textContent);
+        output.removeChild(output.firstChild);
+    }
+    function fun4(){
+        if(!output.childElementCount){
+            alert("队列为空");
+            return false;
+        }
+        alert(output.lastChild.textContent);
+        output.removeChild(output.lastChild);
+    }
+</script>
+</body>
+</html>
