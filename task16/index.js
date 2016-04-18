@@ -56,7 +56,7 @@ function addBtnHandle() {
  * 点击各个删除按钮的时候的处理逻辑
  * 获取哪个城市数据被删，删除数据，更新表格显示
  */
-function delBtnHandle(e) {
+function delBtnHandle(event) {
     // do sth.
     delete aqiData[event.target.parentNode.previousSibling.previousSibling.innerHTML];
     renderAqiList();
