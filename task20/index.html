@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 20</title>
+    <style>
+        input {
+            display: inline-block;
+        }
+
+        #output div {
+            background: red;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+        }
+
+        textarea {
+            margin: 0 30px;
+            width: 200px;
+            height: 70px;
+        }
+
+        span {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="input">
+    <textarea id="input_value"></textarea>
+    <input type="button" value="左侧入" id="left_in" onclick="fun1()">
+    <input type="button" value="右侧入" id="right_in" onclick="fun2()">
+    <input type="button" value="左侧出" id="left_out" onclick="fun3()">
+    <input type="button" value="右侧出" id="right_out" onclick="fun4()">
+    <textarea id="search_value"></textarea>
+    <input type="button" value="查询" id="search" onclick="search()">
+</div>
+<div id="output">
+
+</div>
+
+<script>
+    var input = document.getElementById('input_value');
+    var output = document.getElementById('output');
+    var pattern = document.getElementById('search_value');
+    var data = [];                //存放拆分开的文本框内的字符串
+    var all_data = [];            //存放所有字符串
+    var all_data_copy=[];           //临时变量储存replace后的all_data
+    function creat() {                               //创建新节点
+        data = input.value.split(/\s/);
+        all_data = all_data.concat(data);
+        var textnode = [];                            //保存文本节点
+        var node = [];                                //保存元素节点
+        for (var i = 0; i < data.length; i++) {
+            textnode[i] = document.createTextNode(data[i]);
+            node[i] = document.createElement('div');
+            node[i].appendChild(textnode[i]);
+
+        }
+        return node;
+    }
+    function del() {                                 //点击删除事件
+        output.removeChild(event.target);
+    }
+
+    //fun1--4对应输入框后的4个button
+    function fun1() {
+        var node = creat();
+        for (var i = 0; i < node.length; i++) {
+            node[i].onclick = del;
+            output.insertBefore(node[i], output.childNodes[i + 1]);
+        }
+    }
+    function fun2() {
+        var node = creat();
+        for (var i = 0; i < node.length; i++) {
+            node[i].onclick = del;
+            output.appendChild(node[i]);
+        }
+    }
+    function fun3() {
+        if (!output.childElementCount) {
+            alert("队列为空");
+            return false;
+        }
+        alert(output.firstChild.textContent);
+        output.removeChild(output.firstChild);
+    }
+    function fun4() {
+        if (!output.childElementCount) {
+            alert("队列为空");
+            return false;
+        }
+        alert(output.lastChild.textContent);
+        output.removeChild(output.lastChild);
+    }
+    //查询函数
+    //        function search() {
+    //            var match = new RegExp(pattern.value.trim(), "g");
+    //            output.innerHTML=output.innerHTML.replace(match, "<span>" + pattern.value.trim() + "</span>");
+    //        }
+    function search() {
+        var str = pattern.value.trim();
+        var match = new RegExp(str, "g");
+        all_data_copy=[];
+        all_data_copy.concat(all_data);
+        for (var i = 0; i < all_data.length; i++) {
+            all_data_copy[i] = all_data[i].replace(match, "<span>" + str + "</span>");
+        }
+        refresh();
+    }
+    function refresh() {
+        output.innerHTML = '';        //清空当前输出
+        for (var i = 0; i < all_data_copy.length; i++) {
+            output.innerHTML += "<div>" + all_data_copy[i] + "</div>";
+        }
+    }
+</script>
+</body>
+</html>
