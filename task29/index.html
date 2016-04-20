@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 29</title>
+    <style>
+        html,body{
+            width: 100%;
+            font-size: 20px;
+        }
+        #content{
+            margin: 0 auto;
+            margin-top: 300px;
+        }
+        #txt{
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+            height: 30px;
+            width: 200px;
+            margin: 0 20px;
+        }
+        #btn{
+            height: 30px;
+            width: 50px;
+            background-color: dodgerblue;
+            border-radius: 5px;
+            border: 1px solid cornflowerblue;
+            font-weight: 500;
+            color: white;
+        }
+        #check{
+            padding-left: 20px;
+            font-size: 14px;
+            color: #cccccc;
+        }
+    </style>
+<body>
+<table id="content">
+    <tr id="first">
+        <td>名称</td>
+        <td><input type="text" id="txt"></td>
+        <td><input type="button" id="btn" value="验证" onclick="match()"></td>
+    </tr>
+    <tr id="second">
+        <td></td>
+        <td id="check">必填,长度为4-16个字符</td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    var txt=document.getElementById('txt');
+    var btn=document.getElementById('btn');
+    var check=document.getElementById('check');
+
+    function match(){
+        var str=txt.value;
+        var len=str.replace(/[^x00-xff]/g,"aa").length;         //双字符转化为单字符后的长度
+        if(len==0){
+            check.innerHTML="姓名不能为空";
+            check.style.color="red";
+            txt.style.border="1px solid red";
+        }
+        else if(len>0&&len<4||len>16){
+            check.innerHTML="长度为4-16个字符";
+            check.style.color="red";
+            txt.style.border="1px solid red";
+        }
+        else{
+            check.innerHTML="名称格式正确";
+            check.style.color="green"
+            txt.style.border="1px solid green";
+        }
+    }
+</script>
+</body>
+</html>
