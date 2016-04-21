@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            margin: 100px auto;
+        }
+
+        tr td:nth-child(1) {
+            width: 30%;
+            text-align: right;
+        }
+
+        tr td:nth-child(2) {
+            padding-left:20px ;
+            width: 70%;
+        }
+
+        input {
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #aaaaaa;
+        }
+        .hint {
+            visibility: hidden;
+            font-size: 5px;
+            color: #aaaaaa;
+        }
+        #submit{
+            float: right;
+            height: 30px;
+            width: 70px;
+            background-color:cornflowerblue ;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-weight: 400;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form>
+        <table>
+            <tr>
+                <td><label>名称</label></td>
+                <td><input type="text" id="name"/></td>
+            </tr>
+            <tr class="hint" id="h1">
+                <td></td>
+                <td id="c_name" class="check">必填，长度为4~16位字符</td>
+            </tr>
+
+            <tr>
+                <td><label>密码</label></td>
+                <td><input type="password" id="password"/></td>
+            </tr>
+            <tr class="hint" id="h2">
+                <td></td>
+                <td id="c_password" class="check">必填，长度为4~16位字符,包含字母和数字</td>
+            </tr>
+
+            <tr>
+                <td><label>确认密码</label></td>
+                <td><input type="password" id="confirm"/></td>
+            </tr>
+            <tr class="hint" id="h3">
+                <td></td>
+                <td id="c_confirm" class="check">必填，必须与密码相同</td>
+            </tr>
+
+            <tr>
+                <td><label>邮箱</label></td>
+                <td><input type="text" id="email"/></td>
+            </tr>
+            <tr class="hint" id="h4">
+                <td></td>
+                <td id="c_email" class="check">填写正确的邮箱格式</td>
+            </tr>
+
+            <tr>
+                <td><label>手机</label></td>
+                <td><input type="text" id="phone"/></td>
+            </tr>
+            <tr class="hint" id="h5">
+                <td></td>
+                <td id="c_phone" class="check">填写正确的手机号码</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button id="submit">提交</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    var input = document.getElementsByTagName("input");
+    var check = document.getElementsByClassName("check");
+    var submit=document.getElementById('submit');
+    var flag=0;         //标志
+    for (var i = 0; i < input.length; i++) {
+        input[i].onfocus = focus;
+        input[i].onblur = blur;
+    }
+    submit.onclick=click;
+    function focus() {
+        var e = document.getElementById("c_" + event.target.id);
+        e.style.visibility = "visible";
+        e.style.fontSize = "15px";
+    }
+    function blur() {
+//        var e=document.getElementById("c_"+event.target.id);
+//        match(e);
+        var e = event.target;
+        var str = e.value;
+        if (e.id == "name") {
+            var len = str.replace(/[^x00-xff]/g, "aa").length;         //双字符转化为单字符后的长度
+            if (len == 0) {
+                check[0].innerHTML = "姓名不能为空";
+                check[0].style.color = "red";
+                input[0].style.border = "1px solid red";
+            }
+            else if (len > 0 && len < 4 || len > 16) {
+                check[0].innerHTML = "长度为4-16个字符";
+                check[0].style.color = "red";
+                input[0].style.border = "1px solid red";
+            }
+            else {
+                check[0].innerHTML = "名称格式正确";
+                check[0].style.color = "green";
+                input[0].style.border = "1px solid green";
+                flag++;
+            }
+        }
+        if (e.id == "password") {
+            var len = str.length;
+            if (len == 0) {
+                check[1].innerHTML = "密码不能为空";
+                check[1].style.color = "red";
+                input[1].style.border = "1px solid red";
+            }
+            else if (len > 0 && len < 4 || len > 16) {
+                check[1].innerHTML = "密码长度为4-16个字符";
+                check[1].style.color = "red";
+                input[1].style.border = "1px solid red";
+            }
+            else {
+                var reg = /^[A-Za-z0-9]+$/;
+                if (reg.test(str)) {
+                    check[1].innerHTML = "密码可用";
+                    check[1].style.color = "green";
+                    input[1].style.border = "1px solid green";
+                    flag++;
+                }
+                else {
+                    check[1].innerHTML = "密码由字母和数字构成";
+                    check[1].style.color = "red";
+                    input[1].style.border = "1px solid red";
+                }
+            }
+        }
+        if (e.id == "confirm") {
+            if (input[1].value == input[2].value) {
+                check[2].innerHTML = "密码输入一致";
+                check[2].style.color = "green";
+                input[2].style.border = "1px solid green";
+                flag++;
+            }
+            else {
+                check[2].innerHTML = "请输入相同密码";
+                check[2].style.color = "red";
+                input[2].style.border = "1px solid red";
+            }
+        }
+        if (e.id == "email") {
+            var str = e.value;
+            var reg = /^[A-z0-9]+[_\.]?[A-z0-9]+@[A-z0-9]+[_\.]?[A-z0-9]+\.(com|cn)/;
+            if (reg.test(str)) {
+                check[3].innerHTML = "邮箱格式正确";
+                check[3].style.color = "green";
+                input[3].style.border = "1px solid green";
+                flag++;
+            }
+            else {
+                check[3].innerHTML = "邮箱格式错误";
+                check[3].style.color = "red";
+                input[3].style.border = "1px solid red";
+            }
+        }
+        if(e.id=="phone"){
+            var str= e.value;
+            if(/^[0-9]{11}$/.test(str)){
+                check[4].innerHTML = "手机格式正确";
+                check[4].style.color = "green";
+                input[4].style.border = "1px solid green";
+                flag++;
+            }
+            else {
+                check[4].innerHTML = "手机格式错误";
+                check[4].style.color = "red";
+                input[4].style.border = "1px solid red";
+            }
+        }
+    }
+    function click(){
+        if(flag==5){
+            alert("输入正确");
+        }
+        else{
+            alert("输入有误");
+        }
+    }
+</script>
+</body>
+</html>
